@@ -3,9 +3,33 @@
   <entry>
     <title>A Two-stage Framework for Compound Figure Separation</title>
     <url>/2020/03/28/A-Two-stage-Framework-for-Compound-Figure-Separation/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h2 id="MOTIVATION"><a href="#MOTIVATION" class="headerlink" title="MOTIVATION"></a>MOTIVATION</h2><p>The ever-increasing volume of scientific literature, which remains as the authoritative data source for most scientific fields, necessitates efficient and effective information retrieval tools. Previous information retrieval tools for scientific literature mostly focus on textual information retrieval, such as PubMed/PMC, Semantic Scholar, ScienceDirect, etc.  An obstacle towards automatic image data analysis and retrieval from scientific literature is that over 30% of figures are compound in nature, meaning that they consist of more than one subfigure. Analyzing or retrieving information from these compound figures is challenging because applying an image feature detector to compound figures will result in a mixture (often an average) of features from different subfigures. However, the content of each subfigure can vary dramatically or even be completely unrelated (i.e. semantic inconsistency) which can reduce the discriminative power of image retrieval algorithms.</p>
+<h2 id="TARGET"><a href="#TARGET" class="headerlink" title="TARGET"></a>TARGET</h2><p>It is important to note that, in scientific articles, figures are always associated with captions, which provide descriptive information to help users understand the content of the figures. For compound figures, caption information is even more important as authors tend to leave essential description for each subfigure. Separating compound figures consistent with authorial intent would definitely benefit subsequent image retrieval or analysis tasks.<br><img src="/images/icme2020_workshop/task_demo.png" alt="task"></p>
+<h2 id="METHOD"><a href="#METHOD" class="headerlink" title="METHOD"></a>METHOD</h2><p>In particular, we propose a two-stage framework for compound figure separation. First, we build a Subfigure Label Detector (SLD) on top of YOLOv3 (You Only Look Once version 3) to detect all the subfigure labels in the compound figure. Second, the compound figure is fed into a Master Image Detector (MID) for segmentation, along with the global layout information obtained from the location of subfigure labels within the compound figure. Here the term “master image” is defined as the part of the compound figure associated with a subfigure label.<br><img src="/images/icme2020_workshop/pipeline.png" alt="pipeline"></p>
+<h2 id="RESULTS"><a href="#RESULTS" class="headerlink" title="RESULTS"></a>RESULTS</h2><p><img src="/images/icme2020_workshop/results.png" alt="results"></p>
+<h2 id="FUN"><a href="#FUN" class="headerlink" title="FUN"></a>FUN</h2><p>Also, it is interesting to consider the idea of designing an object detection model in a plug-in fashion, that can be extended to more general object detection/tracking tasks. As shown in the figure below, plugging in different overall layout information leads to different separation results. By doing this, an object detection approach becomes more flexible and possibly more accurate.<br><img src="/images/icme2020_workshop/guided_CFS.png" alt="fun"></p>
+<h2 id="CODE"><a href="#CODE" class="headerlink" title="CODE"></a>CODE</h2><p><a href="https://github.com/WeixinGithubJiang/ICME2020_workshop" target="_blank" rel="noopener">https://github.com/WeixinGithubJiang/ICME2020_workshop</a></p>
+]]></content>
+      <categories>
+        <category>Conference Paper</category>
+      </categories>
       <tags>
-        <tag>Deep Learning, Paper</tag>
+        <tag>Deep Learning</tag>
+        <tag>Object Detection</tag>
+        <tag>ICME</tag>
+        <tag>Workshop</tag>
+        <tag>2020</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Welcome Weixin&#39;s Personal Homepage</title>
+    <url>/2020/03/18/hello-world/</url>
+    <content><![CDATA[<h2 id="EDUCATION"><a href="#EDUCATION" class="headerlink" title="EDUCATION"></a>EDUCATION</h2><p>Sep 2017 – June 2022 (expected):<br><strong>PhD Department of Computer Science</strong><br><em>Advisor: Prof. Oliver Cossairt</em><br>Northwestern University, Evanston, IL, USA</p>
+<p>Aug 2014 – Jul 2017:<br><strong>M.Eng. Department of Automation</strong><br>Tsinghua University, Beijing, China</p>
+<p>Sep 2010 – Jul 2014:<br><strong>B.Eng. in Department of Automation</strong><br>Tsinghua University, Beijing, China </p>
+<h2 id="RESEARCH-EXPERIENCE"><a href="#RESEARCH-EXPERIENCE" class="headerlink" title="RESEARCH EXPERIENCE"></a>RESEARCH EXPERIENCE</h2>]]></content>
+      <categories>
+        <category>Resume</category>
+      </categories>
   </entry>
 </search>
