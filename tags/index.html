@@ -216,10 +216,10 @@
       <div class="post-body">
           <div class="tag-cloud">
             <div class="tag-cloud-title">
-              5 tags in total
+              6 tags in total
             </div>
             <div class="tag-cloud-tags">
-              <a href="/tags/2020/" style="font-size: 12px; color: #ccc">2020</a> <a href="/tags/Deep-Learning/" style="font-size: 12px; color: #ccc">Deep Learning</a> <a href="/tags/ICME/" style="font-size: 12px; color: #ccc">ICME</a> <a href="/tags/Object-Detection/" style="font-size: 12px; color: #ccc">Object Detection</a> <a href="/tags/Workshop/" style="font-size: 12px; color: #ccc">Workshop</a>
+              <a href="/tags/2020/" style="font-size: 12px; color: #ccc">2020</a> <a href="/tags/Deep-Learning/" style="font-size: 12px; color: #ccc">Deep Learning</a> <a href="/tags/ICME/" style="font-size: 12px; color: #ccc">ICME</a> <a href="/tags/Object-Detection/" style="font-size: 12px; color: #ccc">Object Detection</a> <a href="/tags/REVIEWS/" style="font-size: 12px; color: #ccc">REVIEWS</a> <a href="/tags/Workshop/" style="font-size: 12px; color: #ccc">Workshop</a>
             </div>
           </div>
         
@@ -309,7 +309,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -485,6 +485,26 @@ window.addEventListener('pjax:success', () => {
 
 
 
+<script pjax>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
 
 
 

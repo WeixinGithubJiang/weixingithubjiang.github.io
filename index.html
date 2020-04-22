@@ -225,7 +225,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-30 13:13:16" itemprop="dateModified" datetime="2020-03-30T13:13:16-05:00">2020-03-30</time>
+                <time title="Modified: 2020-04-22 17:18:37" itemprop="dateModified" datetime="2020-04-22T17:18:37-05:00">2020-04-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -250,9 +250,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>I am currently a third-year PhD student in the department of computer science at Northwestern University, working with Prof. Oliver Cossairt in Computational Photography Lab. My research focus on computer vision, deep learning and image processing. Before this, I received my master degree and bachelor in the department of automation from Tsinghua University in 2017 and 2014, respectively.</p>
-<h2 id="NEWS"><a href="#NEWS" class="headerlink" title="NEWS:"></a>NEWS:</h2><p><a href="2020/03/28/A-Two-stage-Framework-for-Compound-Figure-Separation/"><span style="color:red">!!!</span> I have posted a page for the ICME 2020 workshop <span style="color:red">!!!</span></a></p>
-
+          <p>I am currently a third-year PhD student in the department of computer science at Northwestern University, working with Prof. Oliver Cossairt in Computational Photography Lab. My research focus on computer vision, deep learning and image processing. Before this, I received my master degree and bachelor degree in the department of automation from Tsinghua University in 2017 and 2014, respectively.</p>
+<h2 id="NEWS"><a href="#NEWS" class="headerlink" title="NEWS:"></a>NEWS:</h2>
       
     </div>
 
@@ -348,7 +347,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -524,6 +523,26 @@ window.addEventListener('pjax:success', () => {
 
 
 
+<script pjax>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
 
 
 
