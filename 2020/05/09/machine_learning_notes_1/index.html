@@ -20,18 +20,26 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Weixin Jiang (蒋伟鑫)">
-<meta property="og:url" content="http://yoursite.com/tags/Workshop/index.html">
+  <meta name="description" content="INTRODUCTIONClassification task is one of the fundamental problems in the field of machine learning. Among all kinds of methods, Support Vector Machine (SVM) plays an essential role. In this blog, I w">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Support Vector Machine">
+<meta property="og:url" content="http://yoursite.com/2020/05/09/machine_learning_notes_1/index.html">
 <meta property="og:site_name" content="Weixin Jiang (蒋伟鑫)">
+<meta property="og:description" content="INTRODUCTIONClassification task is one of the fundamental problems in the field of machine learning. Among all kinds of methods, Support Vector Machine (SVM) plays an essential role. In this blog, I w">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/notes/svm_1.png">
+<meta property="article:published_time" content="2020-05-09T05:00:00.000Z">
+<meta property="article:modified_time" content="2020-05-09T22:54:05.092Z">
 <meta property="article:author" content="Weixin Jiang">
-<meta property="article:tag" content="Resume">
-<meta property="article:tag" content=" PhD">
-<meta property="article:tag" content=" Deep Learning">
+<meta property="article:tag" content="2020">
+<meta property="article:tag" content="Notes">
+<meta property="article:tag" content="Machine Learning">
+<meta property="article:tag" content="Math">
+<meta property="article:tag" content="Classification">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/notes/svm_1.png">
 
-<link rel="canonical" href="http://yoursite.com/tags/Workshop/">
+<link rel="canonical" href="http://yoursite.com/2020/05/09/machine_learning_notes_1/">
 
 
 <script id="page-configurations">
@@ -39,12 +47,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Tag: Workshop | Weixin Jiang (蒋伟鑫)</title>
+  <title>Support Vector Machine | Weixin Jiang (蒋伟鑫)</title>
   
 
 
@@ -188,54 +196,128 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">Workshop
-          <small>Tag</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/09/machine_learning_notes_1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Weixin Jiang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Weixin Jiang (蒋伟鑫)">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Support Vector Machine
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-09 00:00:00 / Modified: 17:54:05" itemprop="dateCreated datePublished" datetime="2020-05-09T00:00:00-05:00">2020-05-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Machine-Learning-Notes/" itemprop="url" rel="index"><span itemprop="name">Machine Learning Notes</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2020/05/09/machine_learning_notes_1/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/09/machine_learning_notes_1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
+        <h2 id="INTRODUCTION"><a href="#INTRODUCTION" class="headerlink" title="INTRODUCTION"></a>INTRODUCTION</h2><p>Classification task is one of the fundamental problems in the field of machine learning. Among all kinds of methods, Support Vector Machine (SVM) plays an essential role. In this blog, I will give a mathematical derivation of SVM.</p>
+<a id="more"></a>
+<h2 id="PROBLEM-DESCRIPTION"><a href="#PROBLEM-DESCRIPTION" class="headerlink" title="PROBLEM DESCRIPTION"></a>PROBLEM DESCRIPTION</h2><p>The task of classification is that given a set of data points with different labels (e.g. red circles and green triangles shown in the figure below), looking for a decision boundary to separate this dataset. If the dataset is linear separable, we can always find a hyperplane to separate all data.</p>
+<p>An existing challenge here is how to make the classifier capable to deal with unseen data. In other words, it means the classifier could be generalized well. From the perspective of SVM, it tries to maximize the fractional margin between data points and the hyperplane, as shown in the figure below.<br><img src="/images/notes/svm_1.png" alt="task"></p>
+<p>Given a set of data points ${x_{i},y_{i}}$, where $x_{i}$ is  the feature vector and $y_{i}$ is the label (e.g. ${-1,1}$), the classifier is defined as:<br>$$h_{w,b}(x) = g(w^{T}x+b)$$<br>Where $g(z)$ is a sign function.<br>Then the fractional margin is:<br>$$\gamma_{i} = y_{i}(w^{T}x_{i}+b)$$<br>Here, we also define $\gamma = \min_{i} \gamma_{i}$. Thus the objective function for SVM is:<br>$$\max_{w, b, \gamma} \gamma$$<br>$$s.t. y_{i}(w^{T}x_{i}+b) \ge \gamma, \lVert w \rVert_{2}^{2}=1$$<br>The above objective function means we want to maximize the smallest the fractional margin.</p>
+<h2 id="DERIVATION"><a href="#DERIVATION" class="headerlink" title="DERIVATION"></a>DERIVATION</h2><p>The original problem contains a non-convex constraint, meaning that there is no guarantee for the convergence of the optimization process. thus a variation of the original objective function is:<br>$$\max_{w, b, \gamma} \frac{\gamma}{\lVert w \rVert_{2}^{2}}$$<br>$$s.t. y_{i}(w^{T}x_{i}+b) \ge \gamma$$<br>In particular, the term $\frac{\gamma}{\lVert w \rVert_{2}^{2}}$ is also known as geometric margin. Now the constraints are convex but the objective function is still not convex yet. Then if we take a look at $\gamma$, we can impose another constraint here $\gamma = 1$. By doing this it does not really change the objective function, because the extract value of the fractional margin is scaled by the values of parameters of the hyperplane. By scaling, we can always make the minimum fractional margin equal to 1. Then we got the final version of the objective function here:<br>$$\min_{w, b} \frac{1}{2}\lVert w \rVert_{2}^{2}$$<br>$$s.t. y_{i}(w^{T}x_{i}+b)  \ge 1$$</p>
+<h2 id="SOLUTION"><a href="#SOLUTION" class="headerlink" title="SOLUTION"></a>SOLUTION</h2><p>A nice way to solve this problem is using the primal-dual algorithm. The origin problem is regarded as the primal problem. By taking the Lagrange multiplier method, we got:<br>$$L (w,b,\alpha) =  \frac{1}{2}\lVert w \rVert_{2}^{2}+\sum_{i}\alpha_{i}(1-y_{i}(w^{T}x_{i}+b))$$<br>Here, we can define:<br>$$\theta_{p}(w,b) = \max_{\alpha, \alpha \ge 0} L(w, b, \alpha)$$<br>Then the primal problem is:<br>$$\min_{w,b} \theta_{p}(w,b) = \min_{w,b} \max_{\alpha, \alpha \ge 0} L(w, b, \alpha)$$<br>Accordingly, we can define:<br>$$\theta_{d}(\alpha) = \min_{w,b} L(w, b, \alpha)$$<br>then we can have our dual problem:<br>$$\max_{\alpha, \alpha \ge 0}  \theta_{d}(\alpha) = \max_{\alpha, \alpha \ge 0}  \min_{w,b} L(w, b, \alpha)$$<br>And dual problem provides a lower bound for the primal problem:<br>$$\min_{w,b} \max_{\alpha, \alpha \ge 0} L(w, b, \alpha) \ge \max_{\alpha, \alpha \ge 0}  \min_{w,b} L(w, b, \alpha)$$<br>And the solution of the dual problem is also the solution of the primal problem when K.K.T. complementary  conditions have been satisfied, which is:<br>$$\alpha_{i}(1-y_{i}(w^{T}x_{i}+b)) = 0$$<br>$$\frac{\partial L(w,b,\alpha)}{\partial w} = 0$$<br>$$\frac{\partial L(w,b,\alpha)}{\partial b} = 0$$<br>Here we got:<br>$$\frac{\partial L(w,b,\alpha)}{\partial w} = w-\sum_{i}\alpha_{i}y_{i}x_{i} = 0$$<br>$$\frac{\partial L(w,b,\alpha)}{\partial b} = -\sum_{i}\alpha_{i}y_{i} = 0$$<br>Plug the value of $w$ back to the Lagrange function:<br>$$L (\alpha) = -\frac{1}{2}\sum_{i}\sum_{j}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{i}^{T}x_{j}+\sum_{i}\alpha_{i}$$<br>Following this, the dual problem is:<br>$$\max_{\alpha}L(\alpha)$$<br>$$s.t. \alpha \ge 0, \sum_{i}\alpha_{i}y_{i} = 0$$</p>
+<p>After solving the $\alpha$, it could be plug back to get the value of $w,b$,<br>$$w = \sum_{i}\alpha_{i}y_{i}x_{i}$$<br>$$ b = -\frac{\min_{y_{i} = 1 } w^{T}x_{i} + \max_{y_{i} = -1 } w^{T}x_{i}}{2} $$</p>
+<h2 id="TAKE-HOME-QUESTION"><a href="#TAKE-HOME-QUESTION" class="headerlink" title="TAKE HOME QUESTION"></a>TAKE HOME QUESTION</h2><p>HOW TO SOLVE $\alpha$?</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-28T19:33:00-05:00"
-              content="2020-03-28">
-          03-28
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/2020/" rel="tag"># 2020</a>
+              <a href="/tags/Notes/" rel="tag"># Notes</a>
+              <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+              <a href="/tags/Math/" rel="tag"># Math</a>
+              <a href="/tags/Classification/" rel="tag"># Classification</a>
+          </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/28/A-Two-stage-Framework-for-Compound-Figure-Separation/" itemprop="url">
-            <span itemprop="name">A Two-stage Framework for Compound Figure Separation</span>
-          </a>
-      </h2>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/28/A-Two-stage-Framework-for-Compound-Figure-Separation/" rel="prev" title="A Two-stage Framework for Compound Figure Separation">
+      <i class="fa fa-chevron-left"></i> A Two-stage Framework for Compound Figure Separation
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-    </div>
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -282,6 +364,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#INTRODUCTION"><span class="nav-number">1.</span> <span class="nav-text">INTRODUCTION</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PROBLEM-DESCRIPTION"><span class="nav-number">2.</span> <span class="nav-text">PROBLEM DESCRIPTION</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DERIVATION"><span class="nav-number">3.</span> <span class="nav-text">DERIVATION</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SOLUTION"><span class="nav-number">4.</span> <span class="nav-text">SOLUTION</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TAKE-HOME-QUESTION"><span class="nav-number">5.</span> <span class="nav-text">TAKE HOME QUESTION</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
