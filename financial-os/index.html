@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Financial OS R20 Partition Provisioner</title>
+<style>body{font:18px/1.6 system-ui,sans-serif;max-width:780px;margin:3rem auto;padding:0 1.2rem;color:#182435}a{color:#1850a0}nav{display:flex;gap:1.2rem;flex-wrap:wrap}h1{line-height:1.2}footer{margin-top:3rem;border-top:1px solid #ddd;padding-top:1rem}</style></head>
+<body><nav><a href="./">Application</a><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of use</a></nav>
+<main><h1>Financial OS R20 Partition Provisioner</h1>
+<p>A personal, local-first financial data application operated by Weixin Jiang. R20 connects structured Google Drive handoffs to a local review and audit workflow.</p>
+<h2>What the integration does</h2>
+<ul><li>Reads committed JSON bundles, publication journals, progress metadata and their original statement evidence using Google Drive.</li>
+<li>Checks exact file identity, destination, content hashes and provenance before local processing.</li>
+<li>Stores observations, candidate records and review results locally. Unresolved facts remain review items.</li>
+<li>Uses a separate, narrowly scoped connection for explicitly approved transport publication. It does not modify original financial sources or operate brokerage accounts.</li></ul>
+<h2>Google authorization</h2>
+<p>The reader requests <code>drive.readonly</code>, which can read files accessible to the connected account. The application restricts its work to the configured Financial OS index and committed source identities. A separate <code>drive.file</code> client retains app-specific transport permissions. It does not request full-Drive write access.</p>
+<p>This site contains application information only. It has no login, financial dashboard, upload form or access to the local database. Publishing this site does not activate automatic consumption or financial production services.</p>
+<p>Read the <a href="privacy.html">privacy policy</a> and <a href="terms.html">terms of use</a> before authorizing the integration.</p>
+</main><footer>Support: <a href="mailto:jwx821239827@gmail.com">jwx821239827@gmail.com</a><br>Updated October 12, 2026.</footer></body></html>
